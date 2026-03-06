@@ -522,7 +522,7 @@ nav {
 <body>
 
 <nav><div class="logo-container">
-    <img src="ful.jpg" alt="Fulgence Logo" class="nav-avatar">
+    <img src="gen.png" alt="Fulgence Logo" class="nav-avatar">
     <div class="logo-text"><strong>FULGENCE.</strong>PORTIFOLIO</div>
 </div>
     <ul class="nav-links">
@@ -561,7 +561,7 @@ nav {
 <section id="about">
     <div class="about-flex">
         <div class="about-image" data-aos="fade-right">
-            <img src="ful.jpg" alt="Fulgence Profile">
+            <img src="ful.png" alt="Fulgence Profile">
         </div>
         <div class="about-text" data-aos="fade-left">
             <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">About Me</h2>
@@ -681,7 +681,6 @@ nav {
 
     </div>
 </section>
-
 <section id="projects">
     <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
 
@@ -693,6 +692,7 @@ nav {
     </div>
 
     <div class="project-gallery">
+        
         <div class="project-item mobile" data-aos="zoom-in">
             <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" alt="E-Commerce App">
             <div class="project-overlay">
@@ -700,7 +700,7 @@ nav {
                 <h3>MobiShop Admin</h3>
                 <p>Full-stack mobile marketplace with real-time tracking.</p>
                 <div class="project-links">
-                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://github.com/niyonambaza" target="_blank"><i class="fa-brands fa-github"></i></a>
                     <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
@@ -713,29 +713,105 @@ nav {
                 <h3>DataPulse Dashboard</h3>
                 <p>Advanced analytics platform with interactive D3.js charts.</p>
                 <div class="project-links">
-                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://github.com/niyonambaza" target="_blank"><i class="fa-brands fa-github"></i></a>
                     <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
         </div>
 
         <div class="project-item backend" data-aos="zoom-in" data-aos-delay="200">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="API System">
+            <img src="dow.jfif" alt="API System">
             <div class="project-overlay">
                 <div class="project-tags"><span class="tag">Python</span><span class="tag">PostgreSQL</span></div>
                 <h3>SecureGuard API</h3>
                 <p>Robust OAuth2 authentication system for enterprise apps.</p>
                 <div class="project-links">
-                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://github.com/niyonambaza" target="_blank"><i class="fa-brands fa-github"></i></a>
                     <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
         </div>
+
+        <div class="project-item web" data-aos="zoom-in" data-aos-delay="300">
+            <img src="dow.jfif" alt="Personal Portfolio">
+            <div class="project-overlay">
+                <div class="project-tags">
+                    <span class="tag">WordPress CMS</span>
+                    <span class="tag">PHP</span>
+                </div>
+                <h3>PROFESSIONAL PORTFOLIO</h3>
+                <p>A custom-themed WordPress solution featuring dynamic CMS management.</p>
+                <div class="project-links">
+                    <a href="https://github.com/niyonambaza" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div> </section>
+
+<script>
+function filterProjects(category) {
+    // 1. Get all projects and all buttons
+    const projects = document.querySelectorAll('.project-item');
+    const buttons = document.querySelectorAll('.filter-btn');
+
+    // 2. Remove 'active' class from all buttons and add to the clicked one
+    buttons.forEach(btn => btn.classList.remove('active'));
+    // Note: We use event.currentTarget to target the button specifically
+    if (event) {
+        event.currentTarget.classList.add('active');
+    }
+
+    // 3. Show/Hide projects based on class
+    projects.forEach(project => {
+        if (category === 'all' || project.classList.contains(category)) {
+            project.style.display = 'block';
+            // Optional: add a tiny delay for AOS to re-trigger or for smooth fade
+            setTimeout(() => { project.style.opacity = '1'; }, 10);
+        } else {
+            project.style.opacity = '0';
+            project.style.display = 'none';
+        }
+    });
+}
+</script>
+</section>
+
+<script>
+function filterProjects(category) {
+    const projects = document.querySelectorAll('.project-item');
+    const buttons = document.querySelectorAll('.filter-btn');
+
+    // Update active button state
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+
+    // Filter projects with animation
+    projects.forEach(project => {
+        project.style.transition = "all 0.4s ease";
+        if (category === 'all' || project.classList.contains(category)) {
+            project.style.display = "block";
+            setTimeout(() => {
+                project.style.opacity = "1";
+                project.style.transform = "scale(1)";
+            }, 1);
+        } else {
+            project.style.opacity = "0";
+            project.style.transform = "scale(0.8)";
+            setTimeout(() => {
+                project.style.display = "none";
+            }, 400);
+        }
+    });
+}
+</script>
     </div>
+     
 </section>
 
 <section id="blog">
-    <h2 class="section-title" data-aos="fade-up">BLOGS AND EVENTS ON WEB APPLICATIONS</h2>
+ <h2 class="section-title" data-aos="fade-up">WEB APPLICATION BLOGS & EVENTS</h2>
     <div class="blog-grid">
         <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
             <div class="blog-gallery-img">
@@ -760,6 +836,27 @@ nav {
                 <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Read More →</a>
             </div>
         </article>
+<article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+    <div class="blog-gallery-img">
+        <img src="dow.jfif" alt="Node.js Development">
+        <div class="blog-overlay"><i class="fa-solid fa-plus"></i></div>
+    </div>
+    <div class="blog-content">
+        <span class="blog-date">Jan 20, 2025</span>
+        <h3 class="blog-title">Why Node.js is the Ultimate Runtime for Database-Driven Backends</h3>
+        <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Read More →</a>
+    </div>
+</article>
+        <article class="blog-card" data-aos="fade-up" data-aos-delay="400"> <div class="blog-gallery-img">
+        <img src="lg.jfif" alt="WordPress Website Development">
+        <div class="blog-overlay"><i class="fa-solid fa-plus"></i></div>
+    </div>
+    <div class="blog-content">
+        <span class="blog-date">March 28, 2024</span>
+        <h3 class="blog-title">Building Professional Website Projects Using WordPress</h3>
+        <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Read More →</a>
+    </div>
+</article>
 
         <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
             <div class="blog-gallery-img">
@@ -814,14 +911,14 @@ nav {
     <div class="footer-container">
         <div class="footer-brand" data-aos="fade-up">
             <div class="logo-container">
-                <img src="ful.jpg" alt="Fulgence Logo" class="nav-avatar">
+                <img src="ful.png" alt="Fulgence Logo" class="nav-avatar">
                 <div class=""><strong>FULGENCE.</strong>PORTIFOLIO</div>
             </div>
             <p class="footer-tagline">Building the future of digital experiences with code and creativity. Based in Kigali, Rwanda.</p>
             <div class="footer-socials">
                 <a href="https://github.com/niyonambaza"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"><i class="fa-brands fa-email"></i></a>
+                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
                 <a href="https://www.youtube.com/@Genzocodes"><i class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
